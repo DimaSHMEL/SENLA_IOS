@@ -1,24 +1,24 @@
 import Foundation
 
-func fibi(_ mas : inout [Int])
+func fibi(_ mas : inout [Int], number : Int)
 {
-    if( mas.count <= 1)
+    for _ in 0...number
     {
-        mas.append(1)
-    }
-    else
-    {
-        let add = mas[mas.count - 1] + mas[mas.count - 2];
-        mas.append(add);
+        if( mas.count <= 1)
+        {
+            mas.append(1)
+        }
+        else
+        {
+            let add = mas[mas.count - 1] + mas[mas.count - 2];
+            mas.append(add);
+        }
     }
 }
 
 var Mas = [Int]();
 let n = 10;
-for _ in 0...n
-{
-    fibi(&Mas);
-}
+fibi(&Mas, number : n);
 if !Mas.isEmpty
 {
     print(Mas);
